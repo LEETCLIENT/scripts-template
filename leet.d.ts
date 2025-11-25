@@ -129,3 +129,11 @@ getRawName(): string
 }
 
 declare enum Icon{LOGO, FIGHT, MOVEMENT, RENDER, PLAYER, MISC, SCRIPT, SEARCH, CHECK, DOWN, UP, CUBE, GLOBE, PERSONS, GEAR, EXIT, ADD, REFRESH, MICROSOFT, STAR, CROSS, HOME, KEYBOARD, COMPASS, BACK, INFO, WARN, POTION, CLOCK, SPUTNIK, GROUP, LINK, }
+declare interface Angle{
+yaw(yaw: number): void
+yaw(): number
+pitch(pitch: number): void
+pitch(): number
+toVector(): Vec3
+}
+
