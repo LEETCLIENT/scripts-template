@@ -2,7 +2,7 @@
 declare enum Category{COMBAT, MOVEMENT, PLAYER, RENDER, OTHER, }
 declare enum Font{sfmedium, icons, }
 declare interface ClientProvider{
-notify(text: Object, icon: Icon, duration_ms: Number): void
+notify(text: any, icon: Icon, duration_ms: number): void
 getModules(): Module[]
 rotateTo(angle: Angle): void
 localRotation(): Angle
