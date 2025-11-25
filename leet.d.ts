@@ -77,7 +77,8 @@ declare interface DragProvider{
 }
 declare const Drag: DragProvider;
 
-declare interface Color {
+declare class Color {
+    constructor(r: number, g: number, b: number, a: number)
     getRGB(): number;
     getRed(): number;
     getGreen(): number;
@@ -87,8 +88,10 @@ declare interface Color {
 declare type Setting = any // TODO
 declare type Entity = any // TODO
 
-declare interface Vec2 {
-    x: number, y: number
+declare class Vec2 {
+    constructor(x: number, y: number)
+    x: number
+    y: number
     add(vec: Vec2): Vec2
     sub(vec: Vec2): Vec2
     mul(scalar: number): Vec2
@@ -97,8 +100,11 @@ declare interface Vec2 {
     div(vec: Vec2): Vec2
 }
 
-declare interface Vec3 {
-    x: number, y: number, z: number
+declare class Vec3 {
+    constructor(x: number, y: number, z: number)
+    x: number
+    y: number
+    z: number
     add(vec: Vec3): Vec3
     sub(vec: Vec3): Vec3
     mul(scalar: number): Vec3
@@ -124,12 +130,13 @@ declare interface Module{
 getName(): string
 isEnabled(): boolean
 getKey(): number
-getCategory(): Category
 getRawName(): string
+getCategory(): Category
 }
 
 declare enum Icon{LOGO, FIGHT, MOVEMENT, RENDER, PLAYER, MISC, SCRIPT, SEARCH, CHECK, DOWN, UP, CUBE, GLOBE, PERSONS, GEAR, EXIT, ADD, REFRESH, MICROSOFT, STAR, CROSS, HOME, KEYBOARD, COMPASS, BACK, INFO, WARN, POTION, CLOCK, SPUTNIK, GROUP, LINK, }
-declare interface Angle{
+declare class Angle{
+constructor(yaw: number, pitch: number)
 yaw(yaw: number): void
 yaw(): number
 pitch(pitch: number): void
