@@ -1,6 +1,8 @@
+// definitions file auto-generated
 declare enum Category{COMBAT, MOVEMENT, PLAYER, RENDER, OTHER, }
 declare enum Font{sfmedium, icons, }
 declare interface ClientProvider{
+notify(text: Object, icon: Icon, duration_ms: Number): void
 getModules(): Module[]
 rotateTo(angle: Angle): void
 localRotation(): Angle
@@ -21,8 +23,8 @@ declare interface ReflectProvider{
 newInstance(clazz: string, ...args: any): any
 findClass(obfName: string): any
 call(clazzOrInstance: any, target: any | null, method: string, ...args: any): any
-callInstance(instance: any, method: string, ...args: any): any
 callStatic(clazz: string, method: string, ...args: any): any
+callInstance(instance: any, method: string, ...args: any): any
 getFieldValue(clazzOrInstance: any, instanceIfAny: any | null, field: string): any
 setFieldValue(clazzOrInstance: any, instanceIfAny: any | null, field: string, value: any): void
 }
@@ -65,8 +67,8 @@ getTarget(): Entity
 getLocal(): Entity
 getLastTarget(): Entity
 send(msg: string): void
-getPos(e: Entity): Vec3
 getServerPos(e: Entity): Vec3
+getPos(e: Entity): Vec3
 getServerRot(e: Entity): Vec2
 }
 declare const Game: GameProvider;
@@ -74,10 +76,6 @@ declare const Game: GameProvider;
 declare interface DragProvider{
 }
 declare const Drag: DragProvider;
-
-declare interface Angle {
-    yaw: number, pitch: number
-}
 
 declare interface Color {
     getRGB(): number;
@@ -113,7 +111,7 @@ declare interface Register {
     name: string
     authors: string[]
     category: Category
-    tags?: string[]
+    tags?: number[]
     description?: string
 }
 
@@ -130,3 +128,4 @@ getCategory(): Category
 getRawName(): string
 }
 
+declare enum Icon{LOGO, FIGHT, MOVEMENT, RENDER, PLAYER, MISC, SCRIPT, SEARCH, CHECK, DOWN, UP, CUBE, GLOBE, PERSONS, GEAR, EXIT, ADD, REFRESH, MICROSOFT, STAR, CROSS, HOME, KEYBOARD, COMPASS, BACK, INFO, WARN, POTION, CLOCK, SPUTNIK, GROUP, LINK, }
